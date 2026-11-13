@@ -20,35 +20,53 @@
         <li><a href="#featured">Featured</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <div class="nav-cart">
-        <svg fill="none" viewBox="0 0 24 24" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007z" />
-        </svg>
-        <span class="cart-badge">3</span>
+      <div class="nav-right">
+        <button class="nav-cart" id="cart-btn" aria-label="Open cart">
+          <svg fill="none" viewBox="0 0 24 24" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007z" />
+          </svg>
+          <span class="cart-badge" id="cart-count">0</span>
+        </button>
+        <!-- hamburger -->
+        <button class="hamburger" id="hamburger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
   </nav>
+
+  <!-- mobile nav drawer -->
+  <div class="mobile-nav" id="mobile-nav">
+    <button class="mobile-nav-close" id="mobile-nav-close">&#x2715;</button>
+    <ul>
+      <li><a href="#shop" class="mobile-nav-link">Shop</a></li>
+      <li><a href="#categories" class="mobile-nav-link">Collections</a></li>
+      <li><a href="#featured" class="mobile-nav-link">Featured</a></li>
+      <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+    </ul>
+  </div>
+  <div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
 
   <!-- ===== HERO ===== -->
   <section class="hero">
     <div class="hero-bg"></div>
     <div class="container hero-content">
-      <p class="hero-eyebrow">Parisian Atelier</p>
-      <h1 class="hero-title">
+      <p class="hero-eyebrow reveal">Parisian Atelier</p>
+      <h1 class="hero-title reveal reveal-delay-1">
         Dress with<br>
         <em>Intention</em>
       </h1>
-      <p class="hero-sub">
+      <p class="hero-sub reveal reveal-delay-2">
         A curated collection of women's fashion — designed for those who believe clothing is a form of art.
       </p>
-      <div class="hero-buttons">
+      <div class="hero-buttons reveal reveal-delay-3">
         <a href="#featured" class="btn btn-primary">
           Shop the Collection
           <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
         <a href="#categories" class="btn btn-outline">View Collections</a>
       </div>
-      <div class="hero-stats">
+      <div class="hero-stats reveal reveal-delay-4">
         <div>
           <div class="stat-num">10+</div>
           <div class="stat-label">Pieces</div>
@@ -68,7 +86,7 @@
   <!-- ===== CATEGORIES ===== -->
   <section class="categories" id="categories">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header reveal">
         <div>
           <p class="eyebrow">Browse</p>
           <h2 class="section-title">Shop by Collection</h2>
@@ -79,7 +97,7 @@
         </a>
       </div>
       <div class="categories-grid">
-        <div class="category-card">
+        <div class="category-card reveal reveal-delay-1" data-filter="Dresses">
           <img src="https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=600" alt="Dresses" loading="lazy" />
           <div class="category-overlay"></div>
           <div class="category-info">
@@ -87,7 +105,7 @@
             <p>4 pieces</p>
           </div>
         </div>
-        <div class="category-card">
+        <div class="category-card reveal reveal-delay-2" data-filter="Tops">
           <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=600" alt="Tops" loading="lazy" />
           <div class="category-overlay"></div>
           <div class="category-info">
@@ -95,7 +113,7 @@
             <p>3 pieces</p>
           </div>
         </div>
-        <div class="category-card">
+        <div class="category-card reveal reveal-delay-3" data-filter="Skirts">
           <img src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?w=600" alt="Skirts" loading="lazy" />
           <div class="category-overlay"></div>
           <div class="category-info">
@@ -103,7 +121,7 @@
             <p>2 pieces</p>
           </div>
         </div>
-        <div class="category-card">
+        <div class="category-card reveal reveal-delay-4" data-filter="Outerwear">
           <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600" alt="Outerwear" loading="lazy" />
           <div class="category-overlay"></div>
           <div class="category-info">
@@ -118,7 +136,7 @@
   <!-- ===== FEATURED PRODUCTS ===== -->
   <section class="featured" id="featured">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header reveal">
         <div>
           <p class="eyebrow">Curated</p>
           <h2 class="section-title">Editor's Picks</h2>
@@ -128,12 +146,23 @@
           <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
-      <div class="products-grid">
 
-        <div class="product-card">
+      <!-- Filter Buttons -->
+      <div class="filter-bar reveal">
+        <button class="filter-btn active" data-cat="All">All</button>
+        <button class="filter-btn" data-cat="Dresses">Dresses</button>
+        <button class="filter-btn" data-cat="Tops">Tops</button>
+        <button class="filter-btn" data-cat="Skirts">Skirts</button>
+        <button class="filter-btn" data-cat="Outerwear">Outerwear</button>
+      </div>
+
+      <div class="products-grid" id="products-grid">
+
+        <div class="product-card reveal" data-category="Dresses">
           <div class="product-img">
             <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=600" alt="Midnight Wrap Dress" loading="lazy" data-lightbox="Midnight Wrap Dress" />
             <span class="sale-badge">Sale</span>
+            <button class="quick-add" data-name="Midnight Wrap Dress" data-price="189.00" data-img="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=80">Add to Cart</button>
           </div>
           <div class="product-info">
             <p class="product-category">Dresses</p>
@@ -145,9 +174,10 @@
           </div>
         </div>
 
-        <div class="product-card">
+        <div class="product-card reveal reveal-delay-1" data-category="Dresses">
           <div class="product-img">
             <img src="https://images.unsplash.com/photo-1572804013427-4d7ca7268217?w=600" alt="Floral Midi Dress" loading="lazy" data-lightbox="Floral Midi Dress" />
+            <button class="quick-add" data-name="Floral Midi Dress" data-price="145.00" data-img="https://images.unsplash.com/photo-1572804013427-4d7ca7268217?w=80">Add to Cart</button>
           </div>
           <div class="product-info">
             <p class="product-category">Dresses</p>
@@ -158,9 +188,10 @@
           </div>
         </div>
 
-        <div class="product-card">
+        <div class="product-card reveal reveal-delay-2" data-category="Tops">
           <div class="product-img">
             <img src="https://images.unsplash.com/photo-1562137369-1a1a0bc66744?w=600" alt="Ribbed Knit Top" loading="lazy" data-lightbox="Ribbed Knit Top" />
+            <button class="quick-add" data-name="Ribbed Knit Top" data-price="65.00" data-img="https://images.unsplash.com/photo-1562137369-1a1a0bc66744?w=80">Add to Cart</button>
           </div>
           <div class="product-info">
             <p class="product-category">Tops</p>
@@ -171,10 +202,11 @@
           </div>
         </div>
 
-        <div class="product-card">
+        <div class="product-card reveal reveal-delay-3" data-category="Skirts">
           <div class="product-img">
             <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600" alt="Pleated Midi Skirt" loading="lazy" data-lightbox="Pleated Midi Skirt" />
             <span class="sale-badge">Sale</span>
+            <button class="quick-add" data-name="Pleated Midi Skirt" data-price="99.00" data-img="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=80">Add to Cart</button>
           </div>
           <div class="product-info">
             <p class="product-category">Skirts</p>
@@ -186,10 +218,11 @@
           </div>
         </div>
 
-        <div class="product-card">
+        <div class="product-card reveal" data-category="Dresses">
           <div class="product-img">
             <img src="https://images.unsplash.com/photo-1485462537746-965f33f7f6a7?w=600" alt="Satin Slip Dress" loading="lazy" data-lightbox="Satin Slip Dress" />
             <span class="sale-badge">Sale</span>
+            <button class="quick-add" data-name="Satin Slip Dress" data-price="129.00" data-img="https://images.unsplash.com/photo-1485462537746-965f33f7f6a7?w=80">Add to Cart</button>
           </div>
           <div class="product-info">
             <p class="product-category">Dresses</p>
@@ -201,9 +234,10 @@
           </div>
         </div>
 
-        <div class="product-card">
+        <div class="product-card reveal reveal-delay-1" data-category="Tops">
           <div class="product-img">
             <img src="https://images.unsplash.com/photo-1591369822096-ffd140ec948f?w=600" alt="Cropped Blazer" loading="lazy" data-lightbox="Cropped Blazer" />
+            <button class="quick-add" data-name="Cropped Blazer" data-price="195.00" data-img="https://images.unsplash.com/photo-1591369822096-ffd140ec948f?w=80">Add to Cart</button>
           </div>
           <div class="product-info">
             <p class="product-category">Tops</p>
@@ -214,9 +248,10 @@
           </div>
         </div>
 
-        <div class="product-card">
+        <div class="product-card reveal reveal-delay-2" data-category="Skirts">
           <div class="product-img">
             <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=600" alt="Leather Mini Skirt" loading="lazy" data-lightbox="Leather Mini Skirt" />
+            <button class="quick-add" data-name="Leather Mini Skirt" data-price="119.00" data-img="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=80">Add to Cart</button>
           </div>
           <div class="product-info">
             <p class="product-category">Skirts</p>
@@ -227,10 +262,11 @@
           </div>
         </div>
 
-        <div class="product-card">
+        <div class="product-card reveal reveal-delay-3" data-category="Outerwear">
           <div class="product-img">
             <img src="https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=600" alt="Wool Coat" loading="lazy" data-lightbox="Wool Coat" />
             <span class="sale-badge">Sale</span>
+            <button class="quick-add" data-name="Wool Coat" data-price="349.00" data-img="https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=80">Add to Cart</button>
           </div>
           <div class="product-info">
             <p class="product-category">Outerwear</p>
@@ -248,7 +284,7 @@
 
   <!-- ===== BANNER ===== -->
   <section class="banner" id="shop">
-    <div class="container">
+    <div class="container reveal">
       <p class="eyebrow">Limited Collection</p>
       <h2 class="banner-title">Every piece tells<br>a story</h2>
       <p>Thoughtfully designed for women who wear their confidence as naturally as they wear their clothes.</p>
@@ -262,7 +298,7 @@
   <!-- ===== FOOTER ===== -->
   <footer id="contact">
     <div class="container">
-      <div class="footer-grid">
+      <div class="footer-grid reveal">
         <div>
           <div class="footer-brand">Élégance</div>
           <p class="footer-desc">Curated women's fashion. Parisian atelier feel, sophisticated design.</p>
@@ -291,6 +327,30 @@
       </div>
     </div>
   </footer>
+
+  <!-- ===== CART SIDEBAR ===== -->
+  <div class="cart-overlay" id="cart-overlay"></div>
+  <aside class="cart-sidebar" id="cart-sidebar" aria-label="Shopping cart">
+    <div class="cart-header">
+      <h2 class="cart-title">Your Cart</h2>
+      <button class="cart-close" id="cart-close" aria-label="Close cart">&#x2715;</button>
+    </div>
+    <div class="cart-items" id="cart-items">
+      <div class="cart-empty" id="cart-empty">
+        <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007z" /></svg>
+        <p>Your cart is empty</p>
+        <a href="#featured" class="btn btn-primary" style="margin-top:12px;font-size:14px;padding:10px 24px;" id="cart-shop-link">Shop Now</a>
+      </div>
+    </div>
+    <div class="cart-footer" id="cart-footer" style="display:none;">
+      <div class="cart-total">
+        <span>Total</span>
+        <span id="cart-total-price">$0.00</span>
+      </div>
+      <button class="btn btn-primary" style="width:100%;justify-content:center;">Checkout</button>
+    </div>
+  </aside>
+
   <!-- ===== LIGHTBOX ===== -->
   <div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
     <button class="lb-close" id="lb-close" aria-label="Close">&#x2715;</button>
@@ -304,94 +364,248 @@
   </div>
 
   <script>
-    (function () {
-      // collect all lightbox-enabled images in order
-      const imgs = Array.from(document.querySelectorAll('img[data-lightbox]'));
-      let current = 0;
-      let zoomed  = false;
+  (function () {
 
-      const overlay  = document.getElementById('lightbox');
-      const lbImg    = document.getElementById('lb-img');
-      const lbWrap   = document.getElementById('lb-img-wrap');
-      const lbCaption= document.getElementById('lb-caption');
-      const lbCounter= document.getElementById('lb-counter');
-
-      function open(index) {
-        current = (index + imgs.length) % imgs.length;
-        const src = imgs[current].src.replace('w=600', 'w=1200');
-        lbImg.src = src;
-        lbImg.alt = imgs[current].alt;
-        lbCaption.textContent = imgs[current].dataset.lightbox;
-        lbCounter.textContent = (current + 1) + ' / ' + imgs.length;
-        resetZoom();
-        overlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
-      }
-
-      function close() {
-        overlay.classList.remove('active');
-        document.body.style.overflow = '';
-        lbImg.src = '';
-        resetZoom();
-      }
-
-      function resetZoom() {
-        zoomed = false;
-        lbWrap.classList.remove('zoomed');
-        lbWrap.style.removeProperty('--zoom-x');
-        lbWrap.style.removeProperty('--zoom-y');
-      }
-
-      // open on image click
-      imgs.forEach((img, i) => {
-        img.addEventListener('click', () => open(i));
-      });
-
-      // prev / next
-      document.getElementById('lb-prev').addEventListener('click', (e) => {
-        e.stopPropagation();
-        open(current - 1);
-      });
-      document.getElementById('lb-next').addEventListener('click', (e) => {
-        e.stopPropagation();
-        open(current + 1);
-      });
-
-      // close button
-      document.getElementById('lb-close').addEventListener('click', (e) => {
-        e.stopPropagation();
-        close();
-      });
-
-      // click overlay background → close
-      overlay.addEventListener('click', (e) => {
-        if (e.target === overlay) close();
-      });
-
-      // zoom on image wrap click
-      lbWrap.addEventListener('click', (e) => {
-        if (!zoomed) {
-          // calculate click position as % within the wrapper
-          const rect = lbWrap.getBoundingClientRect();
-          const x = ((e.clientX - rect.left) / rect.width  * 100).toFixed(1) + '%';
-          const y = ((e.clientY - rect.top)  / rect.height * 100).toFixed(1) + '%';
-          lbWrap.style.setProperty('--zoom-x', x);
-          lbWrap.style.setProperty('--zoom-y', y);
-          zoomed = true;
-          lbWrap.classList.add('zoomed');
-        } else {
-          resetZoom();
+    /* ==============================
+       1. SCROLL REVEAL
+    ============================== */
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
         }
       });
+    }, { threshold: 0.12 });
 
-      // keyboard: arrows + Escape
-      document.addEventListener('keydown', (e) => {
-        if (!overlay.classList.contains('active')) return;
-        if (e.key === 'ArrowRight') open(current + 1);
-        if (e.key === 'ArrowLeft')  open(current - 1);
-        if (e.key === 'Escape')     close();
+    revealEls.forEach(el => revealObserver.observe(el));
+
+    /* ==============================
+       2. MOBILE NAV
+    ============================== */
+    const hamburger       = document.getElementById('hamburger');
+    const mobileNav       = document.getElementById('mobile-nav');
+    const mobileNavClose  = document.getElementById('mobile-nav-close');
+    const mobileNavOverlay= document.getElementById('mobile-nav-overlay');
+
+    function openMobileNav()  { mobileNav.classList.add('open'); mobileNavOverlay.classList.add('active'); document.body.style.overflow = 'hidden'; }
+    function closeMobileNav() { mobileNav.classList.remove('open'); mobileNavOverlay.classList.remove('active'); document.body.style.overflow = ''; }
+
+    hamburger.addEventListener('click', openMobileNav);
+    mobileNavClose.addEventListener('click', closeMobileNav);
+    mobileNavOverlay.addEventListener('click', closeMobileNav);
+    document.querySelectorAll('.mobile-nav-link').forEach(l => l.addEventListener('click', closeMobileNav));
+
+    /* ==============================
+       3. FILTER
+    ============================== */
+    const filterBtns  = document.querySelectorAll('.filter-btn');
+    const productCards = document.querySelectorAll('.product-card');
+
+    // also wire category cards to filter
+    document.querySelectorAll('.category-card[data-filter]').forEach(card => {
+      card.addEventListener('click', () => {
+        const cat = card.dataset.filter;
+        document.querySelector('#featured').scrollIntoView({ behavior: 'smooth' });
+        setTimeout(() => applyFilter(cat), 400);
       });
-    })();
+    });
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => applyFilter(btn.dataset.cat));
+    });
+
+    function applyFilter(cat) {
+      filterBtns.forEach(b => b.classList.toggle('active', b.dataset.cat === cat));
+      productCards.forEach(card => {
+        const match = cat === 'All' || card.dataset.category === cat;
+        if (match) {
+          card.classList.remove('hidden');
+          card.classList.add('visible');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    /* ==============================
+       4. CART STATE
+    ============================== */
+    let cart = [];
+
+    function getItemIndex(name) {
+      return cart.findIndex(i => i.name === name);
+    }
+
+    function updateBadge() {
+      const total = cart.reduce((s, i) => s + i.qty, 0);
+      document.getElementById('cart-count').textContent = total;
+    }
+
+    function renderCart() {
+      const container = document.getElementById('cart-items');
+      const empty     = document.getElementById('cart-empty');
+      const footer    = document.getElementById('cart-footer');
+      const totalEl   = document.getElementById('cart-total-price');
+
+      // clear previous items (keep empty msg)
+      container.querySelectorAll('.cart-item').forEach(el => el.remove());
+
+      if (cart.length === 0) {
+        empty.style.display  = 'flex';
+        footer.style.display = 'none';
+        return;
+      }
+
+      empty.style.display  = 'none';
+      footer.style.display = 'block';
+
+      let total = 0;
+      cart.forEach((item, idx) => {
+        total += parseFloat(item.price) * item.qty;
+        const div = document.createElement('div');
+        div.className = 'cart-item';
+        div.innerHTML = `
+          <img src="${item.img}" alt="${item.name}" />
+          <div class="cart-item-info">
+            <p class="cart-item-name">${item.name}</p>
+            <p class="cart-item-price">$${item.price}</p>
+            <div class="cart-item-qty">
+              <button class="qty-btn" data-idx="${idx}" data-action="dec">−</button>
+              <span>${item.qty}</span>
+              <button class="qty-btn" data-idx="${idx}" data-action="inc">+</button>
+            </div>
+          </div>
+          <button class="cart-item-remove" data-idx="${idx}" aria-label="Remove">&#x2715;</button>
+        `;
+        container.appendChild(div);
+      });
+
+      totalEl.textContent = '$' + total.toFixed(2);
+
+      // qty & remove listeners
+      container.querySelectorAll('.qty-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const i   = parseInt(btn.dataset.idx);
+          const act = btn.dataset.action;
+          if (act === 'inc') cart[i].qty++;
+          else { cart[i].qty--; if (cart[i].qty <= 0) cart.splice(i, 1); }
+          updateBadge();
+          renderCart();
+        });
+      });
+      container.querySelectorAll('.cart-item-remove').forEach(btn => {
+        btn.addEventListener('click', () => {
+          cart.splice(parseInt(btn.dataset.idx), 1);
+          updateBadge();
+          renderCart();
+        });
+      });
+    }
+
+    /* ==============================
+       5. QUICK ADD TO CART
+    ============================== */
+    document.querySelectorAll('.quick-add').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const { name, price, img } = btn.dataset;
+        const idx = getItemIndex(name);
+        if (idx > -1) cart[idx].qty++;
+        else cart.push({ name, price, img, qty: 1 });
+        updateBadge();
+        renderCart();
+
+        // mini feedback on button
+        btn.textContent = '✓ Added';
+        btn.classList.add('added');
+        setTimeout(() => { btn.textContent = 'Add to Cart'; btn.classList.remove('added'); }, 1400);
+
+        // open cart sidebar
+        openCart();
+      });
+    });
+
+    /* ==============================
+       6. CART SIDEBAR OPEN/CLOSE
+    ============================== */
+    const cartSidebar = document.getElementById('cart-sidebar');
+    const cartOverlay = document.getElementById('cart-overlay');
+
+    function openCart()  { cartSidebar.classList.add('open'); cartOverlay.classList.add('active'); document.body.style.overflow = 'hidden'; }
+    function closeCart() { cartSidebar.classList.remove('open'); cartOverlay.classList.remove('active'); document.body.style.overflow = ''; }
+
+    document.getElementById('cart-btn').addEventListener('click', openCart);
+    document.getElementById('cart-close').addEventListener('click', closeCart);
+    cartOverlay.addEventListener('click', closeCart);
+    document.getElementById('cart-shop-link').addEventListener('click', closeCart);
+
+    /* ==============================
+       7. LIGHTBOX
+    ============================== */
+    const lbImgs   = Array.from(document.querySelectorAll('img[data-lightbox]'));
+    let lbCurrent  = 0;
+    let lbZoomed   = false;
+
+    const overlay   = document.getElementById('lightbox');
+    const lbImg     = document.getElementById('lb-img');
+    const lbWrap    = document.getElementById('lb-img-wrap');
+    const lbCaption = document.getElementById('lb-caption');
+    const lbCounter = document.getElementById('lb-counter');
+
+    function lbOpen(index) {
+      lbCurrent = (index + lbImgs.length) % lbImgs.length;
+      lbImg.src = lbImgs[lbCurrent].src.replace('w=600', 'w=1200');
+      lbImg.alt = lbImgs[lbCurrent].alt;
+      lbCaption.textContent = lbImgs[lbCurrent].dataset.lightbox;
+      lbCounter.textContent = (lbCurrent + 1) + ' / ' + lbImgs.length;
+      lbResetZoom();
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function lbClose() {
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+      lbImg.src = '';
+      lbResetZoom();
+    }
+
+    function lbResetZoom() {
+      lbZoomed = false;
+      lbWrap.classList.remove('zoomed');
+      lbWrap.style.removeProperty('--zoom-x');
+      lbWrap.style.removeProperty('--zoom-y');
+    }
+
+    lbImgs.forEach((img, i) => img.addEventListener('click', () => lbOpen(i)));
+
+    document.getElementById('lb-prev').addEventListener('click', e => { e.stopPropagation(); lbOpen(lbCurrent - 1); });
+    document.getElementById('lb-next').addEventListener('click', e => { e.stopPropagation(); lbOpen(lbCurrent + 1); });
+    document.getElementById('lb-close').addEventListener('click', e => { e.stopPropagation(); lbClose(); });
+    overlay.addEventListener('click', e => { if (e.target === overlay) lbClose(); });
+
+    lbWrap.addEventListener('click', (e) => {
+      if (!lbZoomed) {
+        const rect = lbWrap.getBoundingClientRect();
+        lbWrap.style.setProperty('--zoom-x', ((e.clientX - rect.left) / rect.width * 100).toFixed(1) + '%');
+        lbWrap.style.setProperty('--zoom-y', ((e.clientY - rect.top)  / rect.height * 100).toFixed(1) + '%');
+        lbZoomed = true;
+        lbWrap.classList.add('zoomed');
+      } else {
+        lbResetZoom();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (!overlay.classList.contains('active')) return;
+      if (e.key === 'ArrowRight') lbOpen(lbCurrent + 1);
+      if (e.key === 'ArrowLeft')  lbOpen(lbCurrent - 1);
+      if (e.key === 'Escape')     lbClose();
+    });
+
+  })();
   </script>
 
 </body>
